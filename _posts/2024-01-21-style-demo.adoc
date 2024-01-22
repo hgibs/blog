@@ -1,0 +1,257 @@
+= Asciidoc Style Demo
+:showtitle:
+:page-navtitle: Style Demo
+:page-excerpt: Example styling
+:page-root: ../../../
+
+Copied from: https://reneschwietzke.de/demo/demo-asciidoc-content.html
+
+The following article will demonstrate all content that can be created by using AsciiDoc and JBake. We can even put `AsciiDoc` in the header of an article. For more demo stuff, look under the tag `demo`.
+
+That works for a paragraph too. Up to the first headline.
+
+This is also a test post for styling everything nicely and correctly. If you cannot see it here, it is likely that there has not been a style applied yet.
+
+== Headlines - Level 1
+This was not meant to be the *first bold entry* in my new blog, but accidentally interesting in**for**mation to share. Let me just write a little test here to fill the lines nicely. We just _want_ to see how that looks.
+
+This was not meant to be the first entry in my new blog, but accidentally
+interesting in_for_mation to share. +
+This was hard break by using a `+`.
+
+Let's link to https://foojay.io[Foojay] here.
+
+=== Headlines - Level 2
+This was not meant to be the first entry in my new blog, but accidentally
+interesting information to share. Let's #highlight things#.
+
+This was not meant to be the first entry in my new blog, but accidentally
+interesting information to share.
+
+==== Headlines - Level 3
+This was not meant to be the first entry in my new blog, but accidentally
+interesting information to share.
+
+This was not meant to be the first entry in my new blog, but accidentally
+interesting information to share.
+
+===== Headlines - Level 5
+If we ever need that, we can even do that headline.
+
+== Code
+Ok, we can show nice code.
+
+[source,java]
+----
+@Test
+public void test()
+{
+    /**
+     * Just another max function.
+     *
+     * @param a first parameter
+     * @param b second parameter
+     * @return returns the max value of a and b, b if equal
+     */
+    public int max(final int a, final int b)
+    {
+        // inline comment
+        return a &gt; b ? a : b;
+    }
+}
+----
+Just some more text after our code, because we might want to see if the margins
+are right.
+
+[source,x86asm]
+----
+↗  0x00007f455cc708c1: lea    0x20(%rsp),%rbx
+│          &lt; blah-blah-blah, monitor enter &gt;     ; &lt;--- coarsened!
+│  0x00007f455cc70918: mov    (%rsp),%r10        ; load $this
+│  0x00007f455cc7091c: mov    0xc(%r10),%r11d    ; load $this.x
+│  0x00007f455cc70920: mov    %r11d,%r10d        ; ...hm...
+│  0x00007f455cc70923: add    $0x42,%r10d        ; ...hmmm...
+│  0x00007f455cc70927: mov    (%rsp),%r8         ; ...hmmmmm!...
+│  0x00007f455cc7092b: mov    %r10d,0xc(%r8)     ; LOL Hotspot, redundant store, killed two lines below
+│  0x00007f455cc7092f: add    $0x108,%r11d       ; add 0x108 = 0x42 * 4 &lt;-- unrolled by 4
+│  0x00007f455cc70936: mov    %r11d,0xc(%r8)     ; store $this.x back
+│          &lt; blah-blah-blah, monitor exit &gt;      ; &lt;--- coarsened!
+│  0x00007f455cc709c6: add    $0x4,%ebp          ; c += 4   &lt;--- unrolled by 4
+│  0x00007f455cc709c9: cmp    $0x3e5,%ebp        ; c &lt; 1000?
+╰  0x00007f455cc709cf: jl     0x00007f455cc708c1
+----
+
+=== Inline Code
+Just some `inline code` for your pleasure. More code comes here `a`, `b`, and
+`c`.
+
+== Callouts
+You can comment code and relate to things later again.
+
+[source,java]
+----
+@Test
+public void test()
+{
+    public int max(final int a, final int b) // <1>
+    {
+        // inline comment
+        return a &gt; b ? a : b; // <2>
+    }
+}
+----
+<1> Library import
+<2> The magic happens here.
+
+== Lists to the Rescue
+There are moments in time, when only a list can produce clarity. Such as this bullet list.
+
+* Bullet 1 An empty line is required before and after a list to separate it from other blocks. You can force two adjacent lists apart by adding an empty attribute list (i.e., []) above the second list or by inserting an empty line followed by a line comment after the first list. If you use a line comment, the convention is to use //- to provide a hint to other authors that it’s serving as a list divider.
+* Bullet 2
+** Bullet 21 An empty line is required before and after a list to separate it from other blocks. You can force two adjacent lists apart by adding an empty attribute list (i.e., []) above the second list or by inserting an empty line followed by a line comment after the first list. If you use a line comment, the convention is to use //- to provide a hint to other authors that it’s serving as a list divider.
+** Bullet 22
+* Bullet 3
+
+If you are not happy with bullets, you can go with numbers.
+
+. Number 1
+. Number 2 An empty line is required before and after a list to separate it from other blocks. You can force two adjacent lists apart by adding an empty attribute list (i.e., []) above the second list or by inserting an empty line followed by a line comment after the first list. If you use a line comment, the convention is to use //- to provide a hint to other authors that it’s serving as a list divider.
+. Number 3
+.. Number 31 An empty line is required before and after a list to separate it from other blocks. You can force two adjacent lists apart by adding an empty attribute list (i.e., []) above the second list or by inserting an empty line followed by a line comment after the first list. If you use a line comment, the convention is to use //- to provide a hint to other authors that it’s serving as a list divider.
+.. Number 32
+. Number 4
+
+Ok, that was dull, wasn't it?
+
+== Images
+Images are more delightful and so we will demo them now. Let's start with a plain images and nothing fancy.
+
+image::/images/demo/btu-cottbus-library-staircase-large.jpg[Staircase at a Library]
+
+Just because we might want to see how much room is under the image, here is just some text.
+
+=== Images Titles
+We can and should have proper image titles.
+
+.Staircase at a Library
+image::/images/demo/btu-cottbus-library-staircase-large.jpg[Staircase at a Library]
+
+=== Change the Size
+.UaaC
+image::/images/demo/20101022-ubuntu-cola-large.jpg/[Ubuntu as a Cola,50%]
+
+== Admonitions
+NOTE: Note - An admonition draws the reader's attention to auxiliary information.
+
+TIP: Tip - Look for the warp zone under the bridge.
+
+IMPORTANT: Important - Don't forget the children!
+
+CAUTION: Caution - Slippery when wet.
+
+WARNING: Warning - The software you're about to use is untested.
+
+== Quotes
+Let's make the quotes nice and see how that all looks.
+
+"I hold it that a little rebellion now and then is a good thing,
+and as necessary in the political world as storms in the physical."
+-- Thomas Jefferson, Papers of Thomas Jefferson: Volume 11
+
+[quote,Charles Lutwidge Dodgson,'Mathematician and author, also known as https://en.wikipedia.org/wiki/Lewis_Carroll[Lewis Carroll]']
+____
+If you don't know where you are going, any road will get you there.
+____
+
+[quote,Aleksey Shipilëv, JVM/Performance Geek]
+____
+The post should take about 5-10 minutes to read. As such, it goes deep for only a single topic, a single test, a single benchmark, a single observation.
+
+The evidence and discussion here might be anecdotal, not actually reviewed for errors, consistency, writing style, syntaxtic and
+semantically errors, duplicates, or also consistency. Use and/or trust this at your own risk.
+____
+
+
+== Footnotes
+A statement.footnote:[Clarification about this statement.]
+
+A bold statement!footnote:disclaimer[Opinions are my own.]
+
+Refer to a common footnote.footnote:disclaimer[]
+
+Another bold statement with a link.footnote:[https://www.demo.info]
+
+Another bold statement with a link.footnote:[https://www.demo.info[Linktext]]
+
+== Tables
+Sometimes we just have to put things into a more formal grid to convey its meaning. Welcome to the world of tables.
+
+.Table Title 75%
+[width=75%]
+|===
+|Column 1, Header Row |Column 2, Header Row
+
+|Cell in column 1, row 1
+|Cell in column 2, row 1
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+
+|Cell in column 1, row 3
+|Cell in column 2, row 3
+|===
+
+.Table Title Full Width
+|===
+|Column 1, Header Row |Column 2, Header Row
+
+|Cell in column 1, row 1
+|Cell in column 2, row 1
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+
+|Cell in column 1, row 3
+|Cell in column 2, row 3
+|===
+
+And the next table does not have a caption but more columns
+
+|===
+|Column 1|Column 2|Column 3|Column 4|Column 5
+
+|100
+|200
+|300
+|400
+|500
+
+|===
+
+.Right Align Data
+[cols="1,>2,>3"]
+|===
+|Column 1|Column 2|Column 3
+
+|100
+|200
+|300
+
+|===
+
+.No header
+[cols="1,>2,>3"]
+|===
+|100
+|200
+|300
+
+|100
+|200
+|300
+
+|100
+|200
+|300
+
+|===
