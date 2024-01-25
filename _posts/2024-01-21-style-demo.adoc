@@ -1,5 +1,4 @@
 = Asciidoc Style Demo
-:showtitle:
 :page-navtitle: Style Demo
 :page-excerpt: Example styling
 :page-root: ../../../
@@ -63,7 +62,16 @@ public void test()
 Just some more text after our code, because we might want to see if the margins
 are right.
 
-[source,x86asm]
+[source,html]
+----
+<html>
+    <body>Hello world!</body>
+</html>
+----
+
+This should be x86asm but pygments doesn't support it :(
+
+[source,ca65]
 ----
 ↗  0x00007f455cc708c1: lea    0x20(%rsp),%rbx
 │          &lt; blah-blah-blah, monitor enter &gt;     ; &lt;--- coarsened!

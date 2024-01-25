@@ -1,7 +1,9 @@
-title: Jekyll AsciiDoc Quickstart
+title: Holland's Blog
 # uncomment baseurl if you want to publish the site to a subfolder
 #baseurl: /blog
-description: The intersection of military doctrine, software engineering, and life
+description: The intersection of leadership, software engineering, and life
+domain: blog.hollandgibson.com
+lang: en
 exclude:
 - LICENSE
 - README.adoc
@@ -9,12 +11,17 @@ exclude:
 - Gemfile.lock
 - Rakefile
 - assets_orig
+- bin
 asciidoc: {}
 asciidoctor:
   base_dir: :docdir
   safe: unsafe
   attributes:
     icons: font
+    imagesdir: /assets/images
+    # iconsdir: '{imagesdir}/icons'
     idseparator: _
     stylesdir: css
-    source-highlighter: coderay
+    source-highlighter: pygments
+    pygments-css: class
+    pygments-style: 'monokai'

@@ -1,5 +1,8 @@
+assets_orig/fonts/*.woff2
+
 *~
 /_site/
 /.bundle/
 /.jekyll-cache/
 /Gemfile.lock
+
