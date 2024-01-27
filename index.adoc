@@ -1,6 +1,2 @@
 = Holland's Blog
-:showtitle:
-:page-description: A forkable blog-ready Jekyll site using AsciiDoc
-
-== Who I am
-I am a person...
+:page-layout: home

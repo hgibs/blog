@@ -4,6 +4,9 @@ title: Holland's Blog
 description: The intersection of leadership, software engineering, and life
 domain: blog.hollandgibson.com
 lang: en
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
 exclude:
   - LICENSE
   - README.adoc
@@ -12,6 +15,10 @@ exclude:
   - Rakefile
   - assets_orig
   - bin
+
+header_pages:
+  - about.asciidoc
+
 asciidoc: {}
 asciidoctor:
   base_dir: :docdir
