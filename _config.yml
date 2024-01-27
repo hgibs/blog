@@ -5,13 +5,13 @@ description: The intersection of leadership, software engineering, and life
 domain: blog.hollandgibson.com
 lang: en
 exclude:
-- LICENSE
-- README.adoc
-- Gemfile
-- Gemfile.lock
-- Rakefile
-- assets_orig
-- bin
+  - LICENSE
+  - README.adoc
+  - Gemfile
+  - Gemfile.lock
+  - Rakefile
+  - assets_orig
+  - bin
 asciidoc: {}
 asciidoctor:
   base_dir: :docdir
@@ -24,4 +24,4 @@ asciidoctor:
     stylesdir: css
     source-highlighter: pygments
     pygments-css: class
-    pygments-style: 'monokai'
+    pygments-style: "monokai"

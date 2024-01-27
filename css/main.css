@@ -48,6 +48,84 @@ header nav {
 }
 /*! purgecss end ignore */
 
+/* admonitions */
+span.icon > .fa {
+    cursor: default;
+}
+.admonitionblock td.icon {
+    text-align: center;
+    width: 80px;
+}
+.admonitionblock td.icon [class^="fa icon-"] {
+    font-size: 2.5em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    cursor: default;
+}
+.admonitionblock td.icon .icon-note:before {
+    content: "\f05a";
+    color: #19407c;
+}
+.admonitionblock td.icon .icon-tip:before {
+    content: "\f0eb";
+    text-shadow: 1px 1px 2px rgba(155, 155, 0, 0.8);
+    color: #111;
+}
+.admonitionblock td.icon .icon-important:before {
+    content: "\f071";
+    color: #bf6900;
+}
+.admonitionblock td.icon .icon-caution:before {
+    content: "\f06d";
+    color: #bf3400;
+}
+.admonitionblock td.icon .icon-warning:before {
+    content: "\f06a";
+    color: #bf0000;
+}
+
+/* circle call outs */
+.conum[data-value] {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+    -webkit-border-radius: 100%;
+    border: solid #fff;
+    border-radius: 100%;
+    border-width: 1px;
+    text-align: center;
+    font-size: 1em;
+    width: 1.67em;
+    height: 1.67em;
+    line-height: 1.67em;
+    font-family: "IM Fell English Roman", "Open Sans", "DejaVu Sans", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+}
+.conum[data-value] * {
+    color: #fff !important;
+}
+.conum[data-value] + b {
+    display: none;
+}
+.conum[data-value]::after {
+    content: attr(data-value);
+}
+pre .conum[data-value] {
+    position: relative;
+    top: -0.125em;
+}
+b.conum * {
+    color: inherit !important;
+}
+.conum:not([data-value]):empty {
+    display: none;
+}
+/* end circle call outs */
+
+/* limit icon size - especially useful for svg */
+.icon > img {
+    height: 2rem;
+}
+
 share-widget {
     position: fixed;
     right: 20px;
@@ -284,10 +362,6 @@ html {
 }
 body {
     margin: 0;
-}
-h1 {
-    font-size: 2em;
-    margin: 0.67em 0;
 }
 hr {
     box-sizing: content-box;
@@ -546,7 +620,7 @@ ul {
     p,
     pre,
     ul {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         line-height: 1.6;
     }
     ol,
@@ -595,7 +669,7 @@ ul {
     p,
     pre,
     ul {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         line-height: 1.6;
     }
     ol,
