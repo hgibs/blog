@@ -1,2 +1,15 @@
 // Placeholder to allow defining custom styles that override everything else.
 // (Use `_sass/minima/custom-variables.scss` to override variable defaults)
+
+@font-face {
+    /* should use the google font to support italics */
+    font-family: "IM Fell English Roman";
+    src: url("/assets/fonts/IMFeENrm29P.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "fontello-icons-custom";
+    src: url("/assets/fonts/fontello.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}

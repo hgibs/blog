@@ -1,7 +1,6 @@
 = Asciidoc Style Demo
 :page-navtitle: Style Demo
 :page-excerpt: Example styling
-:page-root: ../../../
 
 Copied from: https://reneschwietzke.de/demo/demo-asciidoc-content.html
 

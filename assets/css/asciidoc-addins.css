@@ -1,0 +1,104 @@
+/* cirle nums */
+.conum[data-value] {
+  /* will need to fix for dark mode and convert to sass */
+  display: inline-block;
+  color: #111 !important;
+  background: rgba(0,0,0,.1);
+  -webkit-border-radius: 1em;
+  border-radius: 1em;
+  border-width: 1px;
+  border-style: solid;
+  text-align: center;
+  font-size: .75em;
+  width: 1.67em;
+  height: 1.67em;
+  line-height: 1.67em;
+  font-family: "Source Code Pro", "Ubuntu Mono", "DejaVu Sans", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+}
+.conum[data-value] * {
+  color: #fff !important;
+}
+.conum[data-value] + b {
+  display: none;
+}
+.conum[data-value]::after {
+  content: attr(data-value);
+}
+pre .conum[data-value] {
+  position: relative;
+  top: -.125em;
+}
+b.conum * {
+  color: inherit !important;
+}
+.conum:not([data-value]):empty {
+  display: none;
+}
+
+/* minimized font-awesome icons only */
+.fa {
+  font-family: "fontello-icons-custom";
+  font-style: normal;
+  font-weight: normal;
+  color: black;
+  speak: never;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+/*  width: 1em;*/
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+ 
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+/*  margin-left: .2em;*/
+ 
+  /* You can be more comfortable with increased icons size */
+  font-size: 120%;
+ 
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.icon-note::before {
+  content: "\e800";
+}
+
+.icon-tip::before {
+  content: "\f0eb";
+}
+
+.icon-important::before {
+  content: "\f12a";
+}
+
+.icon-caution::before {
+  content: "\e802";
+}
+
+.icon-warning::before {
+  content: "\e801";
+  color: #C00;
+}
+
+.admonitionblock table td {
+  padding: 10px;
+}
+
+td.icon {
+  padding 3px;
+}

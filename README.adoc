@@ -20,7 +20,11 @@
 
 == About this site
 This site started from https://github.com/asciidoctor/jekyll-asciidoc-quickstart
-Then I took inspiration from https://github.com/alshedivat/al-folio and https://github.com/google/eleventy-high-performance-blog
+Then I took inspiration from https://github.com/alshedivat/al-folio and https://github.com/google/eleventy-high-performance-blog and https://github.com/jekyll/minima/tree/master
+
+=== Fonts
+* IM Fell Font
+* Icons loaded from https://fontello.com/[Fontello]
 
 === Reference documentation
 

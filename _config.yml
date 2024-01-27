@@ -19,6 +19,9 @@ exclude:
 header_pages:
   - about.asciidoc
 
+minima:
+  skin: classic
+
 asciidoc: {}
 asciidoctor:
   base_dir: :docdir
@@ -28,7 +31,7 @@ asciidoctor:
     imagesdir: /assets/images
     # iconsdir: '{imagesdir}/icons'
     idseparator: _
-    stylesdir: css
+    stylesdir: /_sass
     source-highlighter: pygments
     pygments-css: class
     pygments-style: "monokai"
