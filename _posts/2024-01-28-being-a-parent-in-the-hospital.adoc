@@ -2,7 +2,6 @@
 :page-navtitle: parent in the hospital
 :page-excerpt: There is a lot to do when you aren't in charge
 :toc:
-:page-published: false
 
 You would think that being the patient (or acting on their behalf) in a hospital would mean having lots of people take care of you.
 In my experience, this is only part of the deal.
