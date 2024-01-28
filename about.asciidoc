@@ -2,4 +2,11 @@
 :page-layout: page
 :page-permalink: /about/
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at https://jekyllrb.com/[jekyllrb.com]
+I write this blog to organize my thoughts and while I hope that someone finds them useful, I am content with them only having 1 reader - me.
+
+I am a soldier (6 years in the US Army, although I got out a handful of years ago), a father, a man with too many interests, and a backend software engineer. 
+I've been an infantry officer, DevOps engineer, Tech Lead, ML Engineer, and back-end engineer. 
+The thing I like most (besides my lovely wife) is building things with software. 
+The thing I find most fulfilling (professionally) getting difficult people to work as a part of a team.
+
+I'm not really sure where this blog will go, if anywhere, so please let me know if you have comments: author (at) blog.hollandgibson.com
