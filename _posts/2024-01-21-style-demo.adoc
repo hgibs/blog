@@ -1,6 +1,7 @@
 = Asciidoc Style Demo
 :page-navtitle: Style Demo
 :page-excerpt: Example styling
+:page-published: false
 
 Copied from: https://reneschwietzke.de/demo/demo-asciidoc-content.html
 
@@ -133,7 +134,7 @@ Ok, that was dull, wasn't it?
 == Images
 Images are more delightful and so we will demo them now. Let's start with a plain images and nothing fancy.
 
-image::/images/demo/btu-cottbus-library-staircase-large.jpg[Staircase at a Library]
+image::/assets/images/20240121-lib-staircase.jpg[Staircase at a Library]
 
 Just because we might want to see how much room is under the image, here is just some text.
 
@@ -141,11 +142,11 @@ Just because we might want to see how much room is under the image, here is just
 We can and should have proper image titles.
 
 .Staircase at a Library
-image::/images/demo/btu-cottbus-library-staircase-large.jpg[Staircase at a Library]
+image::/assets/images/20240121-lib-staircase.jpg[Staircase at a Library]
 
 === Change the Size
 .UaaC
-image::/images/demo/20101022-ubuntu-cola-large.jpg/[Ubuntu as a Cola,50%]
+image::/assets/images/20240121-neom-yg6v0KoiIcU-unsplash.jpg/[Man with Light,50%]
 
 == Admonitions
 NOTE: Note - An admonition draws the reader's attention to auxiliary information.

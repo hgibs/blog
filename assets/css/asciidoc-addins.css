@@ -3,7 +3,7 @@
   /* will need to fix for dark mode and convert to sass */
   display: inline-block;
   color: #111 !important;
-  background: rgba(0,0,0,.1);
+  background: rgba(0,0,0,0.01);
   -webkit-border-radius: 1em;
   border-radius: 1em;
   border-width: 1px;
@@ -37,6 +37,26 @@ b.conum * {
   display: none;
 }
 
+.colist table td {
+  border: none;
+  white-space:nowrap;
+  width: max-content;
+}
+
+.colist table td:first-child {
+  width: min-content;
+  text-align: center;
+  width: 3ch;
+}
+
+/*.colist table {
+  border: none;
+}*/
+
+/*.colist table tr:first-child th {
+  border-top: 0;
+}
+*/
 /* minimized font-awesome icons only */
 .fa {
   font-family: "fontello-icons-custom";
@@ -74,6 +94,8 @@ b.conum * {
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
 
+
+/* admonition blocks */
 .icon-note::before {
   content: "\e800";
 }
@@ -88,17 +110,38 @@ b.conum * {
 
 .icon-caution::before {
   content: "\e802";
+  color: rgb(244,181,67);
 }
 
 .icon-warning::before {
   content: "\e801";
-  color: #C00;
+  color: rgb(175,35,24);
+}
+
+.admonitionblock table {
+  width: auto;
+  border: none;
 }
 
 .admonitionblock table td {
   padding: 10px;
+  border: none;
 }
 
-td.icon {
+.admonitionblock table td.icon {
   padding 3px;
+  width: 3ch;
+  text-align: center;
+  border-left: none;
+  border-right: 1px solid #e8e8e8;
+  border-top: none;
+  border-bottom: none;
 }
+
+.admonitionblock table td {
+  padding 3px;
+  text-align: left;
+  width: auto;
+  border: none;
+}
+

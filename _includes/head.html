@@ -2,8 +2,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  {%- seo -%}
   <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ "/assets/css/asciidoc-addins.css" | relative_url }}">
 
   {%- feed_meta -%}
   {%- if jekyll.environment == 'production' and site.google_analytics -%}
@@ -21,6 +21,9 @@
   <meta name="referrer" content="no-referrer-when-downgrade" />
 
   <link rel="preconnect" href="/" crossorigin />
+
+
+  <!--
   <link
       rel="preload"
       href="/assets/fonts/IMFeENrm29P.woff2"
@@ -42,11 +45,10 @@
       type="font/woff2"
       crossorigin
   />
+-->
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Literata" />
 
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-
-  <link rel="stylesheet" href="{{ "/assets/css/asciidoc-addins.css" | relative_url }}">
+  {%- seo -%}
 </head>
