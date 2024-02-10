@@ -4,31 +4,102 @@
 :toc:
 
 
-You would think that being the patient (or acting on their behalf) in a hospital would mean having lots of people take care of you.
+Something is wrong.
+You don't know why your loved one is crying.
+They're feeling worse and worse and you can't make it better. 
+In a panic you bring them to the emergency department, wait too long to get seen, and finally get taken to a sterile, but busy area.
+A few people with stethoscopes ask a lot of questions, and thank goodness, it wasn't just you.
+Something is wrong and they say they're going to figure it out.
+
+...
+
+You'd think being the in a hospital would mean having lots of people take care of you so all you have to worry about is doing what they tell you and making sure the rest of your life doesn't fall apart.
 In my experience, this is only part of the deal.
 
-Having spent close to 90 days (and most of those nights) in the hospital as a healthy parent of a sick child over the last year or so, I've started jotting down reminders on all the things I should be doing.
+Having spent close to 90 days (and most of those nights) in the hospital as a healthy parent of a sick child over the last year or so, I've started jotting down reminders on all the things that I need to do while in the hospital.
 
 I hope this post helps anyone who finds themselves or is with someone in the hospital and helps you get the best treatment possible.
 
+Of course these are only my experiences, but we were at the best children's hospital in the state, one that happens to be tied to an R-1 research university as well.
 
 == Things the providers don't do
 * coordinate with other teams
 * check for new notes after rounds
 * think very hard about patient-comfort
 
-
 === Not coordinating with other teams
 I had naively assumed that the providers and professionals in the pediatric ICU would be a well-oiled machine that worked hand-in-hand with their counterparts: the cardialogy team talked to the nephrology team, and the charge nurse knew both of their updates.
 
 I think that the providers (doctors, nurse practioners, nurses, therapists, etc) each work on finding solutions to things that they are uniquely educated to do.
-Of course there is a lot of overlap in their expertise. As an example: despite it being something the nurses do more often, just about any provider can (and will) adjust the air flow to the 
+Of course there is a lot of overlap in their expertise.
+As an example: despite it being something the nurses do more often, just about any provider can (and will) adjust the air flow to the 
 link:[https://en.wikipedia.org/wiki/Nasal_cannula[nasal canula]]
-as needed. 
+as needed.
+That doesn't mean that they all are trying to do the same thing.
 
-It ...
+One team may be focused on reducing the dependence on the "low flow" oxygen support, while another may be trying to keep all the stats (heart rate, blood pressure, O~2~ sats, etc) in a good place so the patient can recover enough for a big upcoming event, for example.
+
+The system generally in place is to do rounds, where at least 1 representative from every team is present to coordinate on the plan of care.
+The problem with that system is that one cannot be on rounds all day long.
+At some point they have to, you know, practice medicine.
+Write orders, review results of tests, and all that other stuff.
+
+In-between rounds, as lab results come in and stats change, the plan rightfully adjusts.
+However, this is where the disrepencies originate. 
+Which leads me to the next point: 
 
 === Checking for new notes after rounds
 Generally, the providers review notes prior-to rounds, during rounds, and when they are expecting something (like the results of the ultrasound they ordered).
+A part of practicing modern medicine (I think, at least) is do record notes after every update in the computer system.
+This gives a very robust, high fidelity record of the treatment and plan for any patient.
+Any provider can log in to see everyone's notes.
+A new specialist can get called and know most of what they need to know before they even get to the room!
 
-...
+However, just like a provider can't spend all day on rounds, they can't spend all day reading and writing notes (not to mention that the hospital can't directly bill the time spent writing/reading notes - but that is a discussion point for another time).
+So, an individual coming in may not know everything they might want to know.
+Or worse, may have missed rounds for one reason or another and may be actively trying to achieve something counter-productive to the plan.
+
+The plan can change on a dime with just one test result or one new symptom.
+But when all they think about is tackling the "problem" they sometimes can forget about the patient.
+
+=== Putting the patient first
+I won't belabor this point.
+"Patient-first" care is the standard way of practicing medicine in my country.
+Sometimes though, the small things just aren't as important to the people trying to solve the bigger problems.
+
+They don't know when the pain is getting worse, or how long it's been since the patient last had a meal or got to sleep.
+This is another, perhaps more specific to my experience, problem. The hospital makes it very difficult to get sleep or eat well.
+Try doing those things poorly during normal times and see how you feel.
+Now imagine being in a lot of pain, and adding that discomfort to the list.
+Eating and sleeping right are pivotal to recovery and there are often small changes that can be done to vastly improve the experience at the hospital.
+For example, waking up to get weighed at 3am because that's a better time for the nurse is completely unacceptable, that can wait.
+
+Ok so knowing all this, what can we do?
+
+== Things you can/should do
+* back-brieffootnote:[I use the Army's definition of this as they describe it in their "Mission Command" publications. Essentially, you explain to the presenter (probably the most senior person present) what you understand their plan/briefing to be - proving you understood what they described to you] each provider
+* ask about 1.5 times as many questions as you think you need to
+* advocate for the patient
+
+The good news is that a non-patient (you or another loved one) in the room can help cover these gaps and improve the care the patient gets.
+My strategy was to try to learn as much as possible about the plan of care and be vocal whenever I wasn't sure they were doing the right thing.
+
+It is hard to be an advocate (for me at least) when you have dozens of people with decades of time spent learning/practicing medicine saying things confidently.
+However, as the parent of a patient (or you if you are the patient) you are ultimately the one who has the authority to reject any treatment they give you.
+I didn't have any moral or relgious qualms with any of the treatments suggested in our hospital stays, and I don't think I ever outright rejected a treatment they recommended.
+
+I asked a lot of questions to understand, and asked a few questions to make sure the provider knew what the other provider (that probably left just minutes ago) told me.
+More than a few times, the provider changed what they were doing after that.
+Most of the time, they were polite and confirmed that they knew what I was talking about.
+
+== Parting notes
+I spent all this time focusing on gaps and problems that can happen on a hospital stay.
+I have the utmost respect for the professionals who spend their lives trying to help others get well.
+They will make much more a difference in people's lives than the code I've written ever will.
+I have never wished that our providers had more experience or were better at what they do, but that doesn't mean that there aren't ways to improve the treatment for someone you love.
+
+If you follow absolutely none of this advice, you will probably still have a satisfactory experience at the hosptial.
+But if given the chance to get your loved one better care, wouldn't you?
+Some of this advice may be useless or worse in a situation you find yourself in, so you should also exercise judgement in following them too.
+Good luck!
+I hope you never find yourself in the position to learn these things first hand, but if you do - if I can help, believe me you can too.
