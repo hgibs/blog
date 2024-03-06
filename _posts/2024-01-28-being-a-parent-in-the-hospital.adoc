@@ -28,12 +28,12 @@ Of course these are only my experiences, but we were at the best children's hosp
 * think very hard about patient-comfort
 
 === Not coordinating with other teams
-I had naively assumed that the providers and professionals in the pediatric ICU would be a well-oiled machine that worked hand-in-hand with their counterparts: the cardialogy team talked to the nephrology team, and the charge nurse knew both of their updates.
+I had naively assumed that the providers and professionals in the pediatric ICU would be a well-oiled machine that worked hand-in-hand with their counterparts: the cardiology team talked to the neurology team, and the charge nurse knew both of their updates.
 
-I think that the providers (doctors, nurse practioners, nurses, therapists, etc) each work on finding solutions to things that they are uniquely educated to do.
+I think that the providers (doctors, nurse practitioners, nurses, therapists, etc) each work on finding solutions to things that they are uniquely educated to do.
 Of course there is a lot of overlap in their expertise.
 As an example: despite it being something the nurses do more often, just about any provider can (and will) adjust the air flow to the 
-link:[https://en.wikipedia.org/wiki/Nasal_cannula[nasal canula]]
+link:[https://en.wikipedia.org/wiki/Nasal_cannula[nasal cannula]]
 as needed.
 That doesn't mean that they all are trying to do the same thing.
 
@@ -45,7 +45,7 @@ At some point they have to, you know, practice medicine.
 Write orders, review results of tests, and all that other stuff.
 
 In-between rounds, as lab results come in and stats change, the plan rightfully adjusts.
-However, this is where the disrepencies originate. 
+However, this is where the discrepancies originate. 
 Which leads me to the next point: 
 
 === Checking for new notes after rounds
@@ -74,7 +74,7 @@ Now imagine being in a lot of pain, and adding that discomfort to the list.
 Eating and sleeping right are pivotal to recovery and there are often small changes that can be done to vastly improve the experience at the hospital.
 For example, waking up to get weighed at 3am because that's a better time for the nurse is completely unacceptable, that can wait.
 
-Ok so knowing all this, what can we do?
+OK so knowing all this, what can we do?
 
 == Things you can/should do
 * back-brieffootnote:[I use the Army's definition of this as they describe it in their "Mission Command" publications. Essentially, you explain to the presenter (probably the most senior person present) what you understand their plan/briefing to be - proving you understood what they described to you] each provider
@@ -86,7 +86,7 @@ My strategy was to try to learn as much as possible about the plan of care and b
 
 It is hard to be an advocate (for me at least) when you have dozens of people with decades of time spent learning/practicing medicine saying things confidently.
 However, as the parent of a patient (or you if you are the patient) you are ultimately the one who has the authority to reject any treatment they give you.
-I didn't have any moral or relgious qualms with any of the treatments suggested in our hospital stays, and I don't think I ever outright rejected a treatment they recommended.
+I didn't have any moral or religious qualms with any of the treatments suggested in our hospital stays, and I don't think I ever outright rejected a treatment they recommended.
 
 I asked a lot of questions to understand, and asked a few questions to make sure the provider knew what the other provider (that probably left just minutes ago) told me.
 More than a few times, the provider changed what they were doing after that.
@@ -98,8 +98,8 @@ I have the utmost respect for the professionals who spend their lives trying to 
 They will make much more a difference in people's lives than the code I've written ever will.
 I have never wished that our providers had more experience or were better at what they do, but that doesn't mean that there aren't ways to improve the treatment for someone you love.
 
-If you follow absolutely none of this advice, you will probably still have a satisfactory experience at the hosptial.
+If you follow absolutely none of this advice, you will probably still have a satisfactory experience at the hospital.
 But if given the chance to get your loved one better care, wouldn't you?
-Some of this advice may be useless or worse in a situation you find yourself in, so you should also exercise judgement in following them too.
+Some of this advice may be useless or worse in a situation you find yourself in, so you should also exercise judgment in following them too.
 Good luck!
 I hope you never find yourself in the position to learn these things first hand, but if you do - if I can help, believe me you can too.
