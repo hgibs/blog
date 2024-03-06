@@ -1,3 +1,5 @@
+*.bak
+
 assets_orig/fonts/*.woff2
 
 *~
