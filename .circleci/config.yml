@@ -9,6 +9,7 @@ jobs:
           password: $DOCKERHUB_TOKEN
     environment:
       HTML_DIR: "/tmp/htmlposts"
+    resource_class: small
     steps:
       - checkout
       - run:
@@ -29,6 +30,7 @@ jobs:
           password: $DOCKERHUB_TOKEN
     environment:
       HTML_DIR: "/tmp/htmlposts"
+    resource_class: small
     steps:
       - checkout
       - attach_workspace:
