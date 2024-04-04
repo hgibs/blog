@@ -15,6 +15,7 @@ jobs:
       - run:
           name: "Make output dir"
           command: "mkdir -p /tmp/htmlposts"
+      - run: pwd
       - run:
           name: "Compile _posts to html"
           command: "./bin/ci_asciidoctor_html.sh"
@@ -38,14 +39,45 @@ jobs:
       - run:
           name: "Check spelling on html-formatted posts"
           command: "./bin/ci_verify_spelling.sh"
-
+  build:
+    docker:
+      - image: "library/ruby:3.3"
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_TOKEN
+    steps:
+      - checkout
+      - gem install
+      - jekyll build --baseurl "blog.hollandgibson.com"
+  publish:
+    docker:
+      - image: "library/node:21-slim"
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_TOKEN
+    steps:
+      - checkout
+      - npm install -g wrangler
+      - wrangler --version
+      - wrangler --help
+      
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/workflows/ & https://circleci.com/docs/configuration-reference/#workflows
 workflows:
-  spellcheck:
+  spellcheck-only:
     jobs:
       - asciidoctor
       - aspell:
           requires:
             - asciidoctor
-      
+      - build
+  build-and-publish:
+    when:
+      condition:
+        equal: [main, << pipeline.git.branch >>]      
+    jobs:
+      - asciidoctor
+      - aspell:
+          requires:
+            - asciidoctor
+      - publish
