@@ -64,9 +64,9 @@ jobs:
     resource_class: small
     steps:
       - checkout
-      - npm install -g wrangler
-      - wrangler --version
-      - wrangler --help
+      - run: npm install -g wrangler
+      - run: wrangler --version
+      - run: wrangler --help
       
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/workflows/ & https://circleci.com/docs/configuration-reference/#workflows
