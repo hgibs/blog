@@ -46,6 +46,7 @@ jobs:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_TOKEN
         entrypoint: bash
+    resource_class: small
     steps:
       - checkout
       - run: 
@@ -60,6 +61,7 @@ jobs:
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_TOKEN
+    resource_class: small
     steps:
       - checkout
       - npm install -g wrangler
@@ -85,4 +87,5 @@ workflows:
       - aspell:
           requires:
             - asciidoctor
+      - build
       - publish
