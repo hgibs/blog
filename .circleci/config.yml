@@ -1,26 +1,49 @@
-# Use the latest 2.1 version of CircleCI pipeline process engine.
-# See: https://circleci.com/docs/configuration-reference
 version: 2.1
 
-# Define a job to be invoked later in a workflow.
-# See: https://circleci.com/docs/jobs-steps/#jobs-overview & https://circleci.com/docs/configuration-reference/#jobs
 jobs:
-  aspell:
+  asciidoctor:
     docker:
-      - image: hgibs/aspell:latest
-
-    # Add steps to the job
-    # See: https://circleci.com/docs/jobs-steps/#steps-overview & https://circleci.com/docs/configuration-reference/#steps
+      - image: "asciidoctor/docker-asciidoctor:1.69"
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_TOKEN
+    environment:
+      HTML_DIR: "/tmp/htmlposts"
     steps:
-      # Checkout the code as the first step.
       - checkout
       - run:
-          name: "Check spelling"
-          command: "echo Hello, World!"
+          name: "Make output dir"
+          command: "mkdir -p /tmp/htmlposts"
+      - run:
+          name: "Compile _posts to html"
+          command: "./bin/ci_asciidoctor_html.sh"
+      - persist_to_workspace: 
+          root: "/tmp/htmlposts"
+          paths: 
+            - "*.html"
+  aspell:
+    docker:
+      - image: "hgibs/aspell:latest"
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_TOKEN
+    environment:
+      HTML_DIR: "/tmp/htmlposts"
+    steps:
+      - checkout
+      - attach_workspace:
+          at: "/tmp/htmlposts"
+      - run:
+          name: "Check spelling on html-formatted posts"
+          command: "./bin/ci_verify_spelling.sh"
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/workflows/ & https://circleci.com/docs/configuration-reference/#workflows
 workflows:
   say-hello-workflow:
     jobs:
-      - aspell
+      - asciidoctor
+      - aspell:
+          requires:
+            - asciidoctor
+      
