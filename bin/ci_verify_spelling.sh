@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 if test -z "$HTML_DIR"; then
   HTML_DIR="tmp"
