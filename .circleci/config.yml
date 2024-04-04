@@ -50,8 +50,8 @@ jobs:
     steps:
       - checkout
       - run: 
-          name: gem install
-          command: "gem install"
+          name: prep
+          command: "bundle install"
       - run:
           name: jekyll build
           command: 'jekyll build --baseurl "blog.hollandgibson.com"'
@@ -80,8 +80,8 @@ workflows:
       - build
   build-and-publish:
     when:
-      condition:
-        equal: [main, << pipeline.git.branch >>]      
+      and:
+        - equal: [main, << pipeline.git.branch >>]      
     jobs:
       - asciidoctor
       - aspell:
