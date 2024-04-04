@@ -23,7 +23,7 @@ jobs:
             - "*.html"
   aspell:
     docker:
-      - image: "hgibs/aspell:latest"
+      - image: "hgibs/aspell:0.60"
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_TOKEN
