@@ -47,8 +47,10 @@ jobs:
           password: $DOCKERHUB_TOKEN
     steps:
       - checkout
-      - gem install
-      - jekyll build --baseurl "blog.hollandgibson.com"
+      - run: gem install
+      - run:
+          name: jekyll build
+          command: jekyll build --baseurl "blog.hollandgibson.com"
   publish:
     docker:
       - image: "library/node:21-slim"
