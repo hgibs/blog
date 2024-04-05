@@ -1,0 +1,99 @@
+version: 2.1
+
+jobs:
+  asciidoctor:
+    docker:
+      - image: "asciidoctor/docker-asciidoctor:1.69"
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_TOKEN
+    environment:
+      HTML_DIR: "/root/project/tmp"
+    resource_class: small
+    steps:
+      - checkout
+      - run:
+          name: "Make output dir"
+          command: "mkdir -p /tmp/htmlposts"
+      - run:
+          name: "Compile _posts to html"
+          command: "./bin/ci_asciidoctor_html.sh"
+      - persist_to_workspace: 
+          root: "/root/project"
+          paths: 
+            - "tmp/*.html"
+  aspell:
+    docker:
+      - image: "hgibs/aspell:0.60"
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_TOKEN
+    environment:
+      HTML_DIR: "/root/project/tmp"
+    resource_class: small
+    steps:
+      - checkout
+      - attach_workspace:
+          at: "/root/project"
+      - run:
+          name: "Check spelling on html-formatted posts"
+          command: "./bin/ci_verify_spelling.sh"
+  build:
+    docker:
+      - image: "library/ruby:3.3"
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_TOKEN
+        entrypoint: bash
+    resource_class: small
+    steps:
+      - checkout
+      - run: 
+          name: prep
+          command: "bundle install"
+      - run:
+          name: jekyll build
+          command: 'jekyll build --baseurl "blog.hollandgibson.com"'
+      - persist_to_workspace: 
+          root: "/root/project"
+          paths: 
+            - "_site"
+  publish:
+    docker:
+      - image: "library/node:21-slim"
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_TOKEN
+    resource_class: small
+    steps:
+      - checkout
+      - attach_workspace:
+          at: "/root/project"
+      - run: npm install -g wrangler
+      - run: wrangler --version
+      - run: wrangler login
+      - run: wrangler pages deploy _site
+      
+# Orchestrate jobs using workflows
+# See: https://circleci.com/docs/workflows/ & https://circleci.com/docs/configuration-reference/#workflows
+workflows:
+  spellcheck-only:
+    when:
+      not:
+        equal: [main, << pipeline.git.branch >>]
+    jobs:
+      - asciidoctor
+      - aspell:
+          requires:
+            - asciidoctor
+  build-and-publish:
+    when:
+      and:
+        - equal: [main, << pipeline.git.branch >>]
+    jobs:
+      - asciidoctor
+      - aspell:
+          requires:
+            - asciidoctor
+      - build
+      - publish
