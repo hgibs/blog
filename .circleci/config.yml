@@ -95,5 +95,9 @@ workflows:
       - aspell:
           requires:
             - asciidoctor
-      - build
-      - publish
+      - build:
+          requires:
+            - aspell
+      - publish:
+          requires:
+            - build
