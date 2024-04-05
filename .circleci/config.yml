@@ -8,21 +8,20 @@ jobs:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_TOKEN
     environment:
-      HTML_DIR: "/tmp/htmlposts"
+      HTML_DIR: "/root/project/tmp"
     resource_class: small
     steps:
       - checkout
       - run:
           name: "Make output dir"
           command: "mkdir -p /tmp/htmlposts"
-      - run: pwd
       - run:
           name: "Compile _posts to html"
           command: "./bin/ci_asciidoctor_html.sh"
       - persist_to_workspace: 
-          root: "/tmp/htmlposts"
+          root: "/root/project"
           paths: 
-            - "*.html"
+            - "tmp/*.html"
   aspell:
     docker:
       - image: "hgibs/aspell:0.60"
@@ -30,12 +29,12 @@ jobs:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_TOKEN
     environment:
-      HTML_DIR: "/tmp/htmlposts"
+      HTML_DIR: "/root/project/tmp"
     resource_class: small
     steps:
       - checkout
       - attach_workspace:
-          at: "/tmp/htmlposts"
+          at: "/root/project"
       - run:
           name: "Check spelling on html-formatted posts"
           command: "./bin/ci_verify_spelling.sh"
@@ -55,6 +54,10 @@ jobs:
       - run:
           name: jekyll build
           command: 'jekyll build --baseurl "blog.hollandgibson.com"'
+      - persist_to_workspace: 
+          root: "/root/project"
+          paths: 
+            - "_site"
   publish:
     docker:
       - image: "library/node:21-slim"
@@ -64,24 +67,29 @@ jobs:
     resource_class: small
     steps:
       - checkout
+      - attach_workspace:
+          at: "/root/project"
       - run: npm install -g wrangler
       - run: wrangler --version
-      - run: wrangler --help
+      - run: wrangler login
+      - run: wrangler pages deploy _site
       
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/workflows/ & https://circleci.com/docs/configuration-reference/#workflows
 workflows:
   spellcheck-only:
+    when:
+      not:
+        - equal: [main, << pipeline.git.branch >>]
     jobs:
       - asciidoctor
       - aspell:
           requires:
             - asciidoctor
-      - build
   build-and-publish:
     when:
       and:
-        - equal: [main, << pipeline.git.branch >>]      
+        - equal: [main, << pipeline.git.branch >>]
     jobs:
       - asciidoctor
       - aspell:
