@@ -80,7 +80,7 @@ workflows:
   spellcheck-only:
     when:
       not:
-        - equal: [main, << pipeline.git.branch >>]
+        equal: [main, << pipeline.git.branch >>]
     jobs:
       - asciidoctor
       - aspell:
