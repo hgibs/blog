@@ -5,15 +5,15 @@
 
 
 Something is wrong.
-You don't know why your loved one is crying.
-They're feeling worse and worse and you can't make it better. 
+You don't know why your love is crying.
+They're feeling worse and worse and you can't make it better.
 In a panic you bring them to the emergency department, wait too long to get seen, and finally get taken to a sterile, but busy area.
 A few people with stethoscopes ask a lot of questions, and thank goodness, it wasn't just you.
 Something is wrong and they say they're going to figure it out.
 
 ...
 
-You'd think being the in a hospital would mean having lots of people take care of you so all you have to worry about is doing what they tell you and making sure the rest of your life doesn't fall apart.
+You'd think being the in a hospital would mean having lots of people take care of you so the only thing you have to worry about is following instructions and making sure the rest of your life doesn't fall apart.
 In my experience, this is only part of the deal.
 
 Having spent close to 90 days (and most of those nights) in the hospital as a healthy parent of a sick child over the last year or so, I've started jotting down reminders on all the things that I need to do while in the hospital.
@@ -32,21 +32,22 @@ I had naively assumed that the providers and professionals in the pediatric ICU 
 
 I think that the providers (doctors, nurse practitioners, nurses, therapists, etc) each work on finding solutions to things that they are uniquely educated to do.
 Of course there is a lot of overlap in their expertise.
-As an example: despite it being something the nurses do more often, just about any provider can (and will) adjust the air flow to the 
+As an example: despite it being something the nurses do more often, just about any provider can (and will) adjust the air flow to the
 link:[https://en.wikipedia.org/wiki/Nasal_cannula[nasal cannula]]
 as needed.
 That doesn't mean that they all are trying to do the same thing.
 
 One team may be focused on reducing the dependence on the "low flow" oxygen support, while another may be trying to keep all the stats (heart rate, blood pressure, O~2~ sats, etc) in a good place so the patient can recover enough for a big upcoming event, for example.
 
-The system generally in place is to do rounds, where at least 1 representative from every team is present to coordinate on the plan of care.
-The problem with that system is that one cannot be on rounds all day long.
+The system generally in place to get everyone in sync is "rounds."
+This is where at least 1 representative from every team is present to coordinate on the plan of care.
+The problem with this system is that one cannot be on rounds all day long.
 At some point they have to, you know, practice medicine.
-Write orders, review results of tests, and all that other stuff.
+Write orders, review results of tests and all that other stuff.
 
 In-between rounds, as lab results come in and stats change, the plan rightfully adjusts.
-However, this is where the discrepancies originate. 
-Which leads me to the next point: 
+However, this is where the discrepancies originate.
+Which leads me to the next point:
 
 === Checking for new notes after rounds
 Generally, the providers review notes prior-to rounds, during rounds, and when they are expecting something (like the results of the ultrasound they ordered).
@@ -64,7 +65,7 @@ But when all they think about is tackling the "problem" they sometimes can forge
 
 === Putting the patient first
 I won't belabor this point.
-"Patient-first" care is the standard way of practicing medicine in my country.
+"Patient-first" care is the standard way of practicing medicine in the USA.
 Sometimes though, the small things just aren't as important to the people trying to solve the bigger problems.
 
 They don't know when the pain is getting worse, or how long it's been since the patient last had a meal or got to sleep.
