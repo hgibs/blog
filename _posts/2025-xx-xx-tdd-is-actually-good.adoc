@@ -1,0 +1,90 @@
+= TDD is great, but school teaches it terribly
+:page-navtitle: tdd-is-not-bad
+:page-excerpt: It's not your dad's TDD
+:toc:
+:figure-caption!:
+
+Test-Driven-Generation (TDD) is taught so terribly, but the actual concept can be so great.
+In fact, I would hazard to guess that most developers actually practice at least a weak form of TDD without even thinking about it.
+
+== How TDD is taught
+The way I see TDD explained (and the way I learned TDD in college a decade ago) is much like a straightforward reading of https://en.wikipedia.org/wiki/Test-driven_development[the wikipedia page]footnote:[The page actually covers a lot of great concepts and is more good than bad, but still falls into the trap of making it too process oriented] goes:
+
+. List the scenario and expectations
+. Write a unit test for every item listed
+. Run the tests...and verify that they fail
+. Write the minimum code to pass the test
+. Verify all passing tests
+. Refactor as needed to submit the merge request (MR).
+
+Unfortunately, the way most developers understand this is:
+
+. Discover (or get assigned) a problem you have to solve
+. Start thinking of how you could solve this problem
+. Instead of actually solving it, write a basic unit test
+. Solve the problem the way you know it should be
+. Keep working on it until the test passes, or fix the tests (because they weren't covering what you wanted)
+. Refactor, go back over your code and fix any readability/maintenance problems (do the minimum amount of work until the automated MR CI/CD pipelines pass)
+
+There's the obvious shortfall of junior devs lacking the experience of dealing with painful problems that could have been solved with tests.
+That much is understandable.
+However, I also see more senior devs say that TDD is "just a waste of time" or "slows me down too much" too.
+
+TDD can actually work though! A differently-framed TDD is a better and a more rewarding development paradigm.
+
+== What TDD really is about
+I am not https://books.google.com/books?vid=ISBN9780321146533[Kent Beck], but I will offer my own opinion instead which is informed from Extreme Programming and his explanation.
+To me, TDD is about following the wisdom of the problem solving processfootnote:[Some examples are: Harvard's https://projects.iq.harvard.edu/files/pelp/files/pel083p2.pdf[process], US Army's https://en.wikipedia.org/wiki/Military_Decision_Making_Process[MDMP], the https://www.learnleansigma.com/problem-solving/a3-problem-solving-methodology/[A3 Problem Solving Methodology], etc.]:
+Define the problem, then fully understand the problem _before_ trying to fix it.
+Measure twice, cut once.
+
+[quote, unknown academic (falsely attributed to Einstein)]
+----
+If I had only one hour to save the world, I would spend fifty-five minutes defining the problem, and only five minutes finding the solution.
+----
+
+... and so on, and so on.
+
+=== How TDD supports the problem solving process
+TDD _is_ the problem solving process, applied to software development.
+
+
+TDD is agilefootnote:[the manifesto, not "kanban" and definitely not "scrum"]
+
+...
+
+If this sounds a lot like how you already do software development, that's because it is!
+
+== "Modern" TDD, or Test Informed Development
+What does this actually look like?
+Specifically, these are the steps and the process that I try to explain to developers on my teams.
+
+I'll use my new term, **Test Informed Development** to differentiate between strict, process-driven TDD and a less rigid but still "test first" development I'm discussing.
+
+
+== TDD in the age of Large Language Models (LLMs) and Generative AI (GenAI)
+I must first note that I believe that LLMs like Claude or ChatGPT are useful as aides to software development as well as lots of other kinds of developmentfootnote:[Summarizing reports, helping trigger imagination, etc.].
+I also believe that LLMs reduce junior engineering growthfootnote:[Hallucinations are very easy to miss unless you get that "gut feeling" that something doesn't look right, and often problems of any significant complexity are much more difficult to solve with LLMs than to just start designing and developing without the LLMs.] and won't solve the fundamental problems in software development.
+LLMs will likely get better over time and even if there isn't a big breakthrough, LLMs will be able to take over more of the tedious steps of software development.
+There are two areas where LLMs are likely to improve and they both have implications for TDDfootnote:[This is predicting the future, to some degree so I expect only to be useful in the broad strokes.]. LLMs can get better at what they already do, and (for the larger GenAI space) they can get better integrations.
+
+=== LLMs just better at what they currently do
+Even if LLMs or other GenAI tools don't get any meaningful evolution, they probably will continue to get better at their existing skills.
+https://bigcode-bench.github.io/[Coding leaderboards] are showing new models trending in the direction of goodness at least.
+Even if you cannot or won't use LLMs, this trend should indicate that you should at least be familiar with _how_ to use them.
+This Test-Informed-Development process is
+
+The good news is that writing prompts for GenAI has a lot in common with TDD.
+You specify what work you want done, the context in how it should get done, and
+
+
+=== LLMs integrated into the entire process
+A lot of recent development in LLMs and similar AI tools is to get better integrations.
+Things like prompts generating prompts, prompts generating images, tools that read images, etc.
+There's even the
+When the LLM tools are better able to integrate to more aspects of this process:
+
+[d2,layout=elk,theme=1]
+----
+a -> b
+----

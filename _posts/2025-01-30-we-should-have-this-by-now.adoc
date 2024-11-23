@@ -1,0 +1,140 @@
+= Where are they?
+:page-navtitle: Things we should have by now.
+:page-excerpt: The software industry is being held back without these tools.
+:toc:
+:figure-caption!:
+
+== Intro
+It's 2025footnote:[or 12,025 HCE], and there are a number of problems that seem tractable but somehow we haven't solved them yet.
+This is especially true when it comes to tools and processes.
+You can think of this post as sort of my wishlist, because I don't quite have the time to fix any of them myself.
+
+== AST-aware code revision control
+=== What we currently have
+Git 1.0.0 was released https://lwn.net/Articles/165127/[in 2005], subversion's 1.0.0 https://en.wikipedia.org/wiki/Apache_Subversion[in 2004], and mercurial's 1.0 https://wiki.mercurial-scm.org/WhatsNew/Archive#Version_1.0_-_2008-03-24[in 2008].
+Those 3 version/revision control systems represent essentially all (>98%) professional developersfootnote:[In https://survey.stackoverflow.co/2022/#version-control-version-control-system-prof[StackOverflow's 2022 Developer Survey] only 1.38% of "professional developers" don't use Git, SVN, or Mercurial as their primary version control].
+There are a few promising new tools, but they haven't changed the way we reason about changes.
+
+There's https://pijul.org/[Pijul] which is patch-based, rather than snapshot based like the "main three" above.
+This improves how to understand how the tool internally represents the state of code and changes, but doesn't fundamentally change anything.
+
+Meta/Facebook released (GPLv2) their internal VCS (version control system) tool, https://github.com/facebook/sapling[Sapling], which is the result of supercharging mercurial to work in a top-down, monolithic (monorepo) collection of a very large amount of code.
+Facebook apparently uses a giant monorepo, and at their scale Git or Mercurial just wouldn't cut it.footnote:[To be fair, Git was designed for an email, patch-based workflow well before anyone had ever coined the term 'monorepo'.]
+They (like many modern alternatives to git) also added some quality of life improvements, namely around conflict resolution, speed, and fixing accidents.footnote[See Meta's https://engineering.fb.com/2022/11/15/open-source/sapling-source-control-scalable/[2022 blog post about Sapling] for more details.
+While I welcome improving the UX of Git, this is still just an iterative improvement.
+
+Then there's https://www.fossil-scm.org/home/doc/trunk/www/index.wiki[Fossil], which is like a self-hosted GitHub-lite or Gitea except that the versioning control applies to tickets, wiki, docs, etc rather than _just_ the code.
+I'm a big proponent of putting everything in version controlfootnote:[Someday I'll explain] so that is closer to a fundamental shift, but there's nothing stopping you from doing all that tracking in plain-text in your git repo right now. Additionally Fossil tracks changes much more like a database tracks changes: atomic and consistent (i.e. cannot be revised). Small wonder the most famous user of Fossil is SQLite.
+
+There are other tools like https://github.com/jj-vcs/jj)[Jujutsu], or https://github.com/breezy-team/breezy[Breezy] and others, but they all appear to focus on git-compatibility or some combination of the "main three" I listed above.
+
+=== AST-aware
+
+All modern code can be represented as an abstract syntax tree (AST), and some tools like https://github.com/tree-sitter/tree-sitter[tree-sitter] exist to create that tree in just about all languages people are writing code in.
+Why then, is there not a VCS that operates on those constructs rather than the strings or bytes that the code lives on disk as?
+
+For example, this code:
+
+[,rust]
+----
+const x = 3;
+const y = 2;
+let a = x - (y + 5)
+----
+
+roughly becomes:
+
+[d2,sketch=true,theme=6]
+----
+0: 'let a ='
+0.shape: 'circle'
+1: '-'
+1.shape: 'circle'
+2: 'x'
+2.shape: 'circle'
+3: '3'
+3.shape: 'circle'
+4: '+'
+4.shape: 'circle'
+5: '2'
+5.shape: 'circle'
+6: 'y'
+6.shape: 'circle'
+7: '5'
+7.shape: 'circle'
+
+0 -> 1
+1 -> 2 -> 3
+1 -> 4 -> 7
+4 -> 6 -> 5
+----
+
+
+
+
+Combining an AST with some additional metadata (for organizing and readability) and a strong, automatic formatter should result in consistent code without requiring completely new Integrated Developer Editors (IDEs).
+Although I would expect the advent of AST-aware VCS to also motivate the creation of AST-targeted IDEs that operate on the tree rather than files on disk too.
+Code could be consistently "rendered" to a bunch of source files, etc.
+Changes would be tracked much closer to what the language understands rather than what changes on disk.
+
+Just look at what the diff or patch looks like when https://github.com/psf/requests/commit/eeafdc143bee0f0356e0f5115029eaef792d4eb4[moving code to a new file]footnote:[This is not the _best_ example because the filenames are de-facto modules in python and this technically results in a different structure, but there is no real change because a test got moved from one file to another. The function itself is the same, but git can only see them as completely separate changes.], or when  https://softwareengineering.stackexchange.com/questions/362906/variable-renaming-throughout-solution-will-produce-lots-of-noise-in-git-blame-w[trying to rename a variable] resulting in the conversation degrading to "you're holding it wrong".
+
+We have the technology now, so where is it?
+
+== Better formal methods
+
+.Photo by link:https://unsplash.com/@dancristianpaduret?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash[Dan Cristian Pădureț] on link:https://unsplash.com/photos/a-blackboard-with-a-bunch-of-diagrams-on-it-h3kuhYUCE9A?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash[Unsplash]
+image::/assets/images/20250130-dan-cristian-padure-h3kuhYUCE9A-unsplash.min.jpg[alt="A blackboard full of diagrams and equations written in chalk."]
+
+{empty} +
+
+Formal methods are fantastic for eliminating errors.
+They are truly amazing if you can work in the way that works best with formal methods.
+You can either write the mathematical proofs first, and generate the code.
+Or, you can write your proofs/contracts alongside your code and (usually with some extra help from you) get the theorem prover to give you a certificate of correctness.
+
+Formal methods can give a very high degree of certainty that your software will perform correctly (although speed/efficiency is not addressed).
+Their use in critical applications like avionics or security libraries is a boon for all of us.
+Unfortunately formal methods aren't user friendly enough.footnote:[Hillel Wayne in his formal methods https://www.hillelwayne.com/post/business-case-formal-methods/#why-not-use-formal-methods[blog post] lists great reasons why formal methods don't work.]
+Using formal methods requires learning at least new ways of writing out your proofs alongside or instead of your code and interactively generating proofs on existing code is not feasible right now.
+
+What I want is to be able to specify the contracts of each function using the programming language, and having the compiler or some sort of helper give guarantees and ensure correctness without having to jump through hoops.
+Things like bounded-numbers, strong-typing, semanticfootnote:[Or https://www.twosigma.com/articles/semantic-types-from-computer-centric-to-human-centric-data-types/["human-centric types"]] or refined types are available now but not always all in the same languagefootnote:[I'm aware of some refined types in rust, like https://docs.rs/uom/0.26.0/uom/index.html[uom] but not language-wide constructs]. and they aren't enough yet.
+Perhaps LLMs can help with this, so I have a bit more hope that formal methods can become easier to use.
+
+== Dependency capability limits
+
+.Photo by link:https://unsplash.com/@wesleyphotography?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash[Wesley Tingey] on link:https://unsplash.com/photos/stack-of-books-on-table-snNHKZ-mGfE?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash[Unsplash]
+image::/assets/images/20250130-wesley-tingey-snNHKZ-mGfE-unsplash.min.jpg[alt="Stacks and stacks of paperwork."]
+
+{empty} +
+
+Transitive dependencies are a security nightmarefootnote:[Laurence Tratt gives an exquisite analysis of this problem on https://tratt.net/laurie/blog/2024/can_we_retain_the_benefits_of_transitive_dependencies_without_undermining_security.html[his blog]. I definitely took some inspiration from that post here].
+Between the `xz` supply chain attack and npm's `left-pad` incident, there is much to fear when it comes to the security of your software supply chain.
+However, the absolutely huge performance bonus you get from using well-managed and well-optimized libraries are too important to leave behind.
+So what then?
+
+Why then, can we not limit the capabilities of dependencies?
+I would love to say in (i.e. configure) my `Cargo.toml` to prohibit the https://docs.rs/reqwest/latest/reqwest/[reqwest] crate from accessing the disk and prohibit the https://docs.rs/serde/latest/serde/index.html[serde] crate from doing anything on the network.
+Even better, it would be amazing to fully specify the limits to the dependencies _from my code_ to a highly precise degree, like compile time guarantees that the disk access is read-only in a specific spot, or sandbox, etc.
+
+We have things like `wasm` that are a start, but they don't give you any control besides giving you a relatively safe sandbox to run other people's code in.
+
+This gets a little complicated because the problem of someone linking to another binary or writing assembly, both of which have appropriate uses, can be used to bypass via obfuscation most checks I would think of being possible currently.
+I think a new high-level language is needed to demonstrate how nice this could be.
+A language where the capabilities are detected by the compiler and clearly (automatically) documented so automated enforcement is possible.
+
+== Bonus - Clocks
+Ok this isn't really something that will help a software developer, but I am frustrated that so many clocks are out of sync.
+Between kitchen appliances, wall clocks, car clocks, etc I just assume that they are +/- a few minutes of the actual time.
+Why are we still setting clocks manually?
+I own a radio-synchronized wrist-watchfootnote:[A Casio LCW-M100TS, an amazing watch], some radio synchronized wall clocks, some GPS-synced clocks but getting anything remotely nice in any device that provides it's own clock is extremely difficult.
+I mean $1000 ovens can't even be bothered to put a quartz oscillator for their clockfootnote:[They just use the mains frequency, which is not very precise]!
+
+it's been over 60 years since WWVB (https://en.wikipedia.org/wiki/WWVB[the NIST time clock for the US/Cananda]) officially launched and 45 ish years since GPS was available to civilians.
+Why aren't these more available and just included in things?
+
+The main problem I see is that there's no cheap, accurate, reliable way to get time signals - GPS and WWVB (or equivalent) don't work super well through walls, after all.
+But we all (mostly) have WiFi.
+Surely there's space in the access point beaconsfootnote:[There's a whole https://datatracker.ietf.org/doc/html/rfc5415#section-4.6.39[vendor-specific payload] section to the 802.11 beacon frames, and clearly plenty of room to put a time signal. An access point could emit a beacon, say once a minute, containing the linux epoch and most devices could ignore it, but clocks could listen for that beacon and correct their clock.] for adding some world time (a sort of up-time of the WiFi access point is already present) to those packets.
+That way you could get internet time without ever connecting to the internet!
