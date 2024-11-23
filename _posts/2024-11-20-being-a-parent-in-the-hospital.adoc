@@ -2,7 +2,9 @@
 :page-navtitle: parent in the hospital
 :page-excerpt: There is a lot to do when you aren't in charge
 :toc:
+:figure-caption!:
 
+_Edited Nov 23, 2024_
 
 Something is wrong.
 You don't know why your love is crying.
@@ -11,7 +13,10 @@ In a panic you bring them to the emergency department, wait too long to get seen
 A few people with stethoscopes ask a lot of questions, and thank goodness, it wasn't just you.
 Something is wrong and they say they're going to figure it out.
 
-...
+.Photo by link:https://unsplash.com/@jcgellidon?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash[JC Gellidon] on link:https://unsplash.com/photos/doctor-performing-operation-9Eb-bpTXglM?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash[Unsplash]
+image::/assets/images/20241120-jc-gellidon-9Eb-bpTXglM-unsplash.jpg[alt="Active ICU room, many doctors and nurses wearing masks standing over a patient"]
+
+'''
 
 You'd think being the in a hospital would mean having lots of people take care of you so the only thing you have to worry about is following instructions and making sure the rest of your life doesn't fall apart.
 In my experience, this is only part of the deal.
