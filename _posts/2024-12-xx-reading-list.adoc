@@ -1,0 +1,14 @@
+= Software Engineering Reading List
+:page-navtitle: reading-list
+:page-excerpt: The studying doesn't stop after school, it just gets more fun.
+:published: false
+:toc:
+
+== Profressional Reading
+
+TIP: This page will be edited over time as I add things to the list.
+
+Enough people have asked for my book recommendations so I thought I could write them down here.
+
+== Edit Log
+Nothing yet!
