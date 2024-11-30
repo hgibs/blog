@@ -14,4 +14,6 @@ gem 'jekyll-feed', '~> 0.17.0'
 
 group :jekyll_plugins do
   gem 'jekyll-asciidoc', '~> 3.0.0'
+  gem 'asciidoctor-diagram', '~> 2.3.1'
 end
+
