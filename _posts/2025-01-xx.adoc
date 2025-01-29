@@ -1,8 +1,0 @@
-= Measure-twice, cut-once
-:page-navtitle: measure twice cut once
-:page-excerpt: It's so simple, but so important
-:toc:
-:figure-caption!:
-
-**Micro post**
-
