@@ -15,13 +15,12 @@ exclude:
   - Rakefile
   - assets_orig
   - bin
-
 header_pages:
   - about.asciidoc
-
 minima:
   skin: classic
-
+keep_files:
+  - assets/images
 asciidoc: {}
 asciidoctor:
   base_dir: :docdir

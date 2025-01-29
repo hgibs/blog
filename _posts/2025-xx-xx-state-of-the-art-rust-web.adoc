@@ -1,0 +1,25 @@
+= State of the art rust web-app in (early) 2025
+:page-navtitle: State of the art web-app in rust
+:page-excerpt: Leptos, Axum, Diesel
+:toc:
+:figure-caption!:
+
+
+== Technologies used
+Let's start with where you're writing rust code:
+
+* Axum or Leptos (with Axum as backend)
+* Diesel ORM
+* Tower (if you need your own networking connections or custom services)
+** Tonic (for gRPC over HTTP/2)
+
+== Why does this matter
+This is (perhaps) a state-of-the-art webapp using some of the latest but standardized (and adopted) technologies (HTTP/2, WASM, Server-Side-Rendering).
+
+== An example project
+
+TBD
+
+== Bonus
+
+If you were making an app, using flutter with the rust-bridge is a small tweak to the above list.
