@@ -39,7 +39,7 @@ For example, this code:
 ----
 const x = 3;
 const y = 2;
-let a = x - (y + 5)
+let a = x - (y + 5);
 ----
 
 roughly becomes:
