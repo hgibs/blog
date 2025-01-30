@@ -32,8 +32,8 @@ There are other tools like https://github.com/jj-vcs/jj)[Jujutsu], or https://gi
 All modern code can be represented as an abstract syntax tree (AST), and some tools like https://github.com/tree-sitter/tree-sitter[tree-sitter] exist to create that tree in just about all languages people are writing code in.
 Why then, is there not a VCS that operates on those constructs rather than the strings or bytes that the code lives on disk as?
 
-Combining an AST with some additional medata (for organizing and readability) and a strong, automatic formatter should result in consistent code without requiring completely new Integrated Developer Editors (IDEs).
-Although I would expect the advent of AST-aware VCS to also motiviate the creation of AST-targeted IDEs that operate on the tree rather than files on disk too.
+Combining an AST with some additional metadata (for organizing and readability) and a strong, automatic formatter should result in consistent code without requiring completely new Integrated Developer Editors (IDEs).
+Although I would expect the advent of AST-aware VCS to also motivate the creation of AST-targeted IDEs that operate on the tree rather than files on disk too.
 Code could be consistently "rendered" to a bunch of source files, etc.
 Changes would be tracked much closer to what the language understands rather than what changes on disk.
 
@@ -44,7 +44,7 @@ We have the technology now, so where is it?
 == Better formal methods
 Formal methods are fantastic for eliminating errors.
 They are truly amazing if you can work in the way that works best with formal methods.
-You can either write the mathematicl proofs first, and generate the code.
+You can either write the mathematical proofs first, and generate the code.
 Or, you can write your proofs/contracts alongside your code and (usually with some extra help from you) get the theorem prover to give you a certificate of correctness.
 
 Formal methods can give a very high degree of certainty that your software will perform correctly (although speed/efficiency is not addressed).
@@ -52,7 +52,7 @@ Their use in critical applications like avionics or security libraries is a boon
 Unfortunately formal methods aren't user friendly enough.footnote:[Hillel Wayne in his formal methods https://www.hillelwayne.com/post/business-case-formal-methods/#why-not-use-formal-methods[blog post] lists great reasons why formal methods don't work.]
 Using formal methods requires learning at least new ways of writing out your proofs alongside or instead of your code and interactively generating proofs on existing code is not feasible right now.
 
-What I want is to be able to specify the contracts of each function using the programming language, and having the compiler or some sort of helper give gauruntees and ensure correctness without having to jump through hoops.
+What I want is to be able to specify the contracts of each function using the programming language, and having the compiler or some sort of helper give guarantees and ensure correctness without having to jump through hoops.
 Things like bounded-numbers, strong-typing, semanticfootnote:[Or https://www.twosigma.com/articles/semantic-types-from-computer-centric-to-human-centric-data-types/["human-centric types"]] or refined types are available now but not always all in the same languagefootnote:[I'm aware of some refined types in rust, like https://docs.rs/uom/0.26.0/uom/index.html[uom] but not language-wide constructs]. and they aren't enough yet.
 Perhaps LLMs can help with this, so I have a bit more hope that formal methods can become easier to use.
 
@@ -64,13 +64,13 @@ So what then?
 
 Why then, can we not limit the capabilities of dependencies?
 I would love to say in (i.e. configure) my `Cargo.toml` to prohibit the https://docs.rs/reqwest/latest/reqwest/[reqwest] crate from accessing the disk and prohibit the https://docs.rs/serde/latest/serde/index.html[serde] crate from doing anything on the network.
-Even better, it would be amazing to fully specify the limits to the dependencies _from my code_ to a highly precise degree, like compile time guaruntees that the disk access is read-only in a specific spot, or sandbox, etc.
+Even better, it would be amazing to fully specify the limits to the dependencies _from my code_ to a highly precise degree, like compile time guarantees that the disk access is read-only in a specific spot, or sandbox, etc.
 
 We have things like `wasm` that are a start, but they don't give you any control besides giving you a relatively safe sandbox to run other people's code in.
 
-This gets a little complicated because the problem of someone linking to another binary or writing assembly, both of which have appropriate uses, can be used to bypass via obsfucation most checks I would think of being possible currently.
+This gets a little complicated because the problem of someone linking to another binary or writing assembly, both of which have appropriate uses, can be used to bypass via obfuscation most checks I would think of being possible currently.
 I think a new high-level language is needed to demonstrate how nice this could be.
-A language where the capabilites are detected by the compiler and clearly (automatically) documented so automated enforcement is possible.
+A language where the capabilities are detected by the compiler and clearly (automatically) documented so automated enforcement is possible.
 
 == Bonus - Clocks
 Ok this isn't really something that will help a software developer, but I am frustrated that so many clocks are out of sync.
@@ -84,7 +84,7 @@ Why aren't these more available and just included in things?
 
 The main problem I see is that there's no cheap, accurate, reliable way to get time signals - GPS and WWVB (or equivalent) don't work super well through walls, after all.
 But we all (mostly) have WiFi.
-Surely there's space in the access point beaconsfootnote:[There's a whole https://datatracker.ietf.org/doc/html/rfc5415#section-4.6.39[vendor-specific payload] section to the 802.11 beacon frames, and clearly plenty of room to put a time signal. An access point could emit a beacon, say once a minute, containing the linux epoch and most devices could ignore it, but clocks could listen for that beacon and correct their clock.] for adding some world time (a sort of uptime of the wifi access point is already present) to those packets.
+Surely there's space in the access point beaconsfootnote:[There's a whole https://datatracker.ietf.org/doc/html/rfc5415#section-4.6.39[vendor-specific payload] section to the 802.11 beacon frames, and clearly plenty of room to put a time signal. An access point could emit a beacon, say once a minute, containing the linux epoch and most devices could ignore it, but clocks could listen for that beacon and correct their clock.] for adding some world time (a sort of up-time of the WiFi access point is already present) to those packets.
 That way you could get internet time without ever connecting to the internet!
 
 
