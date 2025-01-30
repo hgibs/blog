@@ -29,6 +29,29 @@ I'm a big proponent of putting everything in version controlfootnote:[Someday I'
 There are other tools like https://github.com/jj-vcs/jj)[Jujutsu], or https://github.com/breezy-team/breezy[Breezy] and others, but they all appear to focus on git-compatibility or some combination of the "main three" I listed above.
 
 === AST-aware
+
+[d2]
+----
+1: ' '
+1.shape: 'circle'
+2: ' '
+2.shape: 'circle'
+3: ' '
+3.shape: 'circle'
+4: ' '
+4.shape: 'circle'
+5: ' '
+5.shape: 'circle'
+6: ' '
+6.shape: 'circle'
+7: ' '
+7.shape: 'circle'
+
+1 -> 2 -> 3
+1 -> 4 -> 7
+4 -> 6 -> 5
+----
+
 All modern code can be represented as an abstract syntax tree (AST), and some tools like https://github.com/tree-sitter/tree-sitter[tree-sitter] exist to create that tree in just about all languages people are writing code in.
 Why then, is there not a VCS that operates on those constructs rather than the strings or bytes that the code lives on disk as?
 
@@ -57,7 +80,7 @@ Things like bounded-numbers, strong-typing, semanticfootnote:[Or https://www.two
 Perhaps LLMs can help with this, so I have a bit more hope that formal methods can become easier to use.
 
 == Dependency capability limits
-Transitive dependencies are a security nightmare.
+Transitive dependencies are a security nightmarefootnote:[Laurence Tratt gives an exquisite analysis of this problem on https://tratt.net/laurie/blog/2024/can_we_retain_the_benefits_of_transitive_dependencies_without_undermining_security.html[his blog]. I definitely took some inspiration from that post here].
 Between the xz supply chain attack and the pad-left incident, there is much to fear when it comes to the security of your software supply chain.
 However, the absolutely huge performance bonus you get from using well-managed and well-optimized libraries are too important to leave behind.
 So what then?
