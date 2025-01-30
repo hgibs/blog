@@ -24,7 +24,7 @@ They (like many modern alternatives to git) also added some quality of life impr
 While I welcome improving the UX of Git, this is still just an iterative improvement.
 
 Then there's https://www.fossil-scm.org/home/doc/trunk/www/index.wiki[Fossil], which is like a self-hosted GitHub-lite or Gitea except that the versioning control applies to tickets, wiki, docs, etc rather than _just_ the code.
-I'm a big proponent of putting everything in version controlfootnote:[someday I'll explain] so that is closer to a fundamental shift, but there's nothing stopping you from doing all that tracking in plain-text in your git repo right now. Additionally Fossil tracks changes much more like a database tracks changes: atomic and consistent (i.e. cannot be revised). Small wonder the most famous user of Fossil is SQLite.
+I'm a big proponent of putting everything in version controlfootnote:[Someday I'll explain] so that is closer to a fundamental shift, but there's nothing stopping you from doing all that tracking in plain-text in your git repo right now. Additionally Fossil tracks changes much more like a database tracks changes: atomic and consistent (i.e. cannot be revised). Small wonder the most famous user of Fossil is SQLite.
 
 There are other tools like https://github.com/jj-vcs/jj)[Jujutsu], or https://github.com/breezy-team/breezy[Breezy] and others, but they all appear to focus on git-compatibility or some combination of the "main three" I listed above.
 
@@ -37,7 +37,7 @@ Although I would expect the advent of AST-aware VCS to also motivate the creatio
 Code could be consistently "rendered" to a bunch of source files, etc.
 Changes would be tracked much closer to what the language understands rather than what changes on disk.
 
-Just look at what the diff or patch looks like when https://github.com/psf/requests/commit/eeafdc143bee0f0356e0f5115029eaef792d4eb4[moving code to a new file]footnote:[this is not the _best_ example because the filenames are de-facto modules in python and this technically results in a different structure, but there is no real change because a test got moved from one file to another. The function itself is the same, but git can only see them as completely separate changes.], or when  https://softwareengineering.stackexchange.com/questions/362906/variable-renaming-throughout-solution-will-produce-lots-of-noise-in-git-blame-w[trying to rename a variable] resulting in the conversation degrading to "you're holding it wrong".
+Just look at what the diff or patch looks like when https://github.com/psf/requests/commit/eeafdc143bee0f0356e0f5115029eaef792d4eb4[moving code to a new file]footnote:[This is not the _best_ example because the filenames are de-facto modules in python and this technically results in a different structure, but there is no real change because a test got moved from one file to another. The function itself is the same, but git can only see them as completely separate changes.], or when  https://softwareengineering.stackexchange.com/questions/362906/variable-renaming-throughout-solution-will-produce-lots-of-noise-in-git-blame-w[trying to rename a variable] resulting in the conversation degrading to "you're holding it wrong".
 
 We have the technology now, so where is it?
 
@@ -79,13 +79,10 @@ Why are we still setting clocks manually?
 I own a radio-synchronized wrist-watchfootnote:[A Casio LCW-M100TS, an amazing watch], some radio synchronized wall clocks, some GPS-synced clocks but getting anything remotely nice in any device that provides it's own clock is extremely difficult.
 I mean $1000 ovens can't even be bothered to put a quartz oscillator for their clockfootnote:[They just use the mains frequency, which is not very precise]!
 
-it's been over 60 years since WWVB ([the NIST time clock for the US/Cananda](https://en.wikipedia.org/wiki/WWVB)) officially launched and 45 ish years since GPS was available to civilians.
+it's been over 60 years since WWVB (https://en.wikipedia.org/wiki/WWVB[the NIST time clock for the US/Cananda]) officially launched and 45 ish years since GPS was available to civilians.
 Why aren't these more available and just included in things?
 
 The main problem I see is that there's no cheap, accurate, reliable way to get time signals - GPS and WWVB (or equivalent) don't work super well through walls, after all.
 But we all (mostly) have WiFi.
 Surely there's space in the access point beaconsfootnote:[There's a whole https://datatracker.ietf.org/doc/html/rfc5415#section-4.6.39[vendor-specific payload] section to the 802.11 beacon frames, and clearly plenty of room to put a time signal. An access point could emit a beacon, say once a minute, containing the linux epoch and most devices could ignore it, but clocks could listen for that beacon and correct their clock.] for adding some world time (a sort of up-time of the WiFi access point is already present) to those packets.
 That way you could get internet time without ever connecting to the internet!
-
-
-https://datatracker.ietf.org/doc/html/rfc5415#section-4.6.39
