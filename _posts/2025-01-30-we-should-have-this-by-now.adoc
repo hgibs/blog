@@ -67,7 +67,7 @@ We have the technology now, so where is it?
 == Better formal methods
 
 .Photo by link:https://unsplash.com/@dancristianpaduret?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash[Dan Cristian Pădureț] on link:https://unsplash.com/photos/a-blackboard-with-a-bunch-of-diagrams-on-it-h3kuhYUCE9A?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash[Unsplash]
-image::/assets/images/20250130-dan-cristian-padure-h3kuhYUCE9A-unsplash.jpg[alt="A blackboard full of diagrams and equations written in chalk."]
+image::/assets/images/20250130-dan-cristian-padure-h3kuhYUCE9A-unsplash.min.jpg[alt="A blackboard full of diagrams and equations written in chalk."]
 
 {empty} +
 
@@ -88,7 +88,7 @@ Perhaps LLMs can help with this, so I have a bit more hope that formal methods c
 == Dependency capability limits
 
 .Photo by link:https://unsplash.com/@wesleyphotography?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash[Wesley Tingey] on link:https://unsplash.com/photos/stack-of-books-on-table-snNHKZ-mGfE?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash[Unsplash]
-image::/assets/images/20250130-wesley-tingey-snNHKZ-mGfE-unsplash.jpg[alt="Stacks and stacks of paperwork."]
+image::/assets/images/20250130-wesley-tingey-snNHKZ-mGfE-unsplash.min.jpg[alt="Stacks and stacks of paperwork."]
 
 {empty} +
 
