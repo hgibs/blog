@@ -26,7 +26,7 @@ While I welcome improving the UX of Git, this is still just an iterative improve
 Then there's https://www.fossil-scm.org/home/doc/trunk/www/index.wiki[Fossil], which is like a self-hosted GitHub-lite or Gitea except that the versioning control applies to tickets, wiki, docs, etc rather than _just_ the code.
 I'm a big proponent of putting everything in version controlfootnote:[someday I'll explain] so that is closer to a fundamental shift, but there's nothing stopping you from doing all that tracking in plain-text in your git repo right now. Additionally Fossil tracks changes much more like a database tracks changes: atomic and consistent (i.e. cannot be revised). Small wonder the most famous user of Fossil is SQLite.
 
-There are other tools like (https://github.com/jj-vcs/jj)[Jujutsu], or (https://github.com/breezy-team/breezy)[Breezy] and others, but they all appear to focus on git-compatibility or some combination of the "main three" I listed above.
+There are other tools like https://github.com/jj-vcs/jj)[Jujutsu], or https://github.com/breezy-team/breezy[Breezy] and others, but they all appear to focus on git-compatibility or some combination of the "main three" I listed above.
 
 === AST-aware
 All modern code can be represented as an abstract syntax tree (AST), and some tools like https://github.com/tree-sitter/tree-sitter[tree-sitter] exist to create that tree in just about all languages people are writing code in.
@@ -71,3 +71,21 @@ We have things like `wasm` that are a start, but they don't give you any control
 This gets a little complicated because the problem of someone linking to another binary or writing assembly, both of which have appropriate uses, can be used to bypass via obsfucation most checks I would think of being possible currently.
 I think a new high-level language is needed to demonstrate how nice this could be.
 A language where the capabilites are detected by the compiler and clearly (automatically) documented so automated enforcement is possible.
+
+== Bonus - Clocks
+Ok this isn't really something that will help a software developer, but I am frustrated that so many clocks are out of sync.
+Between kitchen appliances, wall clocks, car clocks, etc I just assume that they are +/- a few minutes of the actual time.
+Why are we still setting clocks manually?
+I own a radio-synchronized wrist-watchfootnote:[A Casio LCW-M100TS, an amazing watch], some radio synchronized wall clocks, some GPS-synced clocks but getting anything remotely nice in any device that provides it's own clock is extremely difficult.
+I mean $1000 ovens can't even be bothered to put a quartz oscillator for their clockfootnote:[They just use the mains frequency, which is not very precise]!
+
+it's been over 60 years since WWVB ([the NIST time clock for the US/Cananda](https://en.wikipedia.org/wiki/WWVB)) officially launched and 45 ish years since GPS was available to civilians.
+Why aren't these more available and just included in things?
+
+The main problem I see is that there's no cheap, accurate, reliable way to get time signals - GPS and WWVB (or equivalent) don't work super well through walls, after all.
+But we all (mostly) have WiFi.
+Surely there's space in the access point beaconsfootnote:[There's a whole https://datatracker.ietf.org/doc/html/rfc5415#section-4.6.39[vendor-specific payload] section to the 802.11 beacon frames, and clearly plenty of room to put a time signal. An access point could emit a beacon, say once a minute, containing the linux epoch and most devices could ignore it, but clocks could listen for that beacon and correct their clock.] for adding some world time (a sort of uptime of the wifi access point is already present) to those packets.
+That way you could get internet time without ever connecting to the internet!
+
+
+https://datatracker.ietf.org/doc/html/rfc5415#section-4.6.39
