@@ -33,27 +33,44 @@ There are other tools like https://github.com/jj-vcs/jj)[Jujutsu], or https://gi
 All modern code can be represented as an abstract syntax tree (AST), and some tools like https://github.com/tree-sitter/tree-sitter[tree-sitter] exist to create that tree in just about all languages people are writing code in.
 Why then, is there not a VCS that operates on those constructs rather than the strings or bytes that the code lives on disk as?
 
+For example, this code:
+
+[,rust]
+----
+const x = 3;
+const y = 2;
+let a = x - (y + 5)
+----
+
+roughly becomes:
+
 [d2,sketch=true,theme=6]
 ----
-1: ' '
+0: 'let a ='
+0.shape: 'circle'
+1: '-'
 1.shape: 'circle'
-2: ' '
+2: 'x'
 2.shape: 'circle'
-3: ' '
+3: '3'
 3.shape: 'circle'
-4: ' '
+4: '+'
 4.shape: 'circle'
-5: ' '
+5: '2'
 5.shape: 'circle'
-6: ' '
+6: 'y'
 6.shape: 'circle'
-7: ' '
+7: '5'
 7.shape: 'circle'
 
+0 -> 1
 1 -> 2 -> 3
 1 -> 4 -> 7
 4 -> 6 -> 5
 ----
+
+
+
 
 Combining an AST with some additional metadata (for organizing and readability) and a strong, automatic formatter should result in consistent code without requiring completely new Integrated Developer Editors (IDEs).
 Although I would expect the advent of AST-aware VCS to also motivate the creation of AST-targeted IDEs that operate on the tree rather than files on disk too.
@@ -93,7 +110,7 @@ image::/assets/images/20250130-wesley-tingey-snNHKZ-mGfE-unsplash.min.jpg[alt="S
 {empty} +
 
 Transitive dependencies are a security nightmarefootnote:[Laurence Tratt gives an exquisite analysis of this problem on https://tratt.net/laurie/blog/2024/can_we_retain_the_benefits_of_transitive_dependencies_without_undermining_security.html[his blog]. I definitely took some inspiration from that post here].
-Between the xz supply chain attack and the pad-left incident, there is much to fear when it comes to the security of your software supply chain.
+Between the `xz` supply chain attack and npm's `left-pad` incident, there is much to fear when it comes to the security of your software supply chain.
 However, the absolutely huge performance bonus you get from using well-managed and well-optimized libraries are too important to leave behind.
 So what then?
 

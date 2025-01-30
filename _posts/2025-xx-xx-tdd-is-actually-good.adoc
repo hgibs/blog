@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 = TDD is great, but school teaches it terribly
 :page-navtitle: tdd-is-not-bad
 :page-excerpt: It's not your dad's TDD
@@ -89,4 +88,3 @@ When the LLM tools are better able to integrate to more aspects of this process:
 ----
 a -> b
 ----
-
