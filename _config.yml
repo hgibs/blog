@@ -15,12 +15,16 @@ exclude:
   - Rakefile
   - assets_orig
   - bin
+  - _sass
 header_pages:
   - about.asciidoc
 minima:
   skin: classic
 keep_files:
   - assets/images
+feed:
+  title: Holland Gibson's blog
+  url: https://blog.hollandgibson.com
 asciidoc: {}
 asciidoctor:
   base_dir: :docdir

@@ -1,16 +1,16 @@
-= It's 2025, why don't we have this?
-:page-navtitle: Things we should have by now
-:page-excerpt: The software industry is being held back without these tools
+= Where are they?
+:page-navtitle: Things we should have by now.
+:page-excerpt: The software industry is being held back without these tools.
 :toc:
 :figure-caption!:
 
 == Intro
-There are a number of problems that seem tractable, but somehow we haven't solved them yet.
+It's 2025footnote:[or 12,025 HCE], and there are a number of problems that seem tractable but somehow we haven't solved them yet.
 This is especially true when it comes to tools and processes.
-You can think of this post as sort of my 2020's to 2030's wishlist.
+You can think of this post as sort of my wishlist, because I don't quite have the time to fix any of them myself.
 
 == AST-aware code revision control
-=== What we currently got
+=== What we currently have
 Git 1.0.0 was released https://lwn.net/Articles/165127/[in 2005], subversion's 1.0.0 https://en.wikipedia.org/wiki/Apache_Subversion[in 2004], and mercurial's 1.0 https://wiki.mercurial-scm.org/WhatsNew/Archive#Version_1.0_-_2008-03-24[in 2008].
 Those 3 version/revision control systems represent essentially all (>98%) professional developersfootnote:[In https://survey.stackoverflow.co/2022/#version-control-version-control-system-prof[StackOverflow's 2022 Developer Survey] only 1.38% of "professional developers" don't use Git, SVN, or Mercurial as their primary version control].
 There are a few promising new tools, but they haven't changed the way we reason about changes.
@@ -30,7 +30,10 @@ There are other tools like https://github.com/jj-vcs/jj)[Jujutsu], or https://gi
 
 === AST-aware
 
-[d2]
+All modern code can be represented as an abstract syntax tree (AST), and some tools like https://github.com/tree-sitter/tree-sitter[tree-sitter] exist to create that tree in just about all languages people are writing code in.
+Why then, is there not a VCS that operates on those constructs rather than the strings or bytes that the code lives on disk as?
+
+[d2,sketch=true,theme=6]
 ----
 1: ' '
 1.shape: 'circle'
@@ -52,9 +55,6 @@ There are other tools like https://github.com/jj-vcs/jj)[Jujutsu], or https://gi
 4 -> 6 -> 5
 ----
 
-All modern code can be represented as an abstract syntax tree (AST), and some tools like https://github.com/tree-sitter/tree-sitter[tree-sitter] exist to create that tree in just about all languages people are writing code in.
-Why then, is there not a VCS that operates on those constructs rather than the strings or bytes that the code lives on disk as?
-
 Combining an AST with some additional metadata (for organizing and readability) and a strong, automatic formatter should result in consistent code without requiring completely new Integrated Developer Editors (IDEs).
 Although I would expect the advent of AST-aware VCS to also motivate the creation of AST-targeted IDEs that operate on the tree rather than files on disk too.
 Code could be consistently "rendered" to a bunch of source files, etc.
@@ -65,6 +65,12 @@ Just look at what the diff or patch looks like when https://github.com/psf/reque
 We have the technology now, so where is it?
 
 == Better formal methods
+
+.Photo by link:https://unsplash.com/@dancristianpaduret?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash[Dan Cristian Pădureț] on link:https://unsplash.com/photos/a-blackboard-with-a-bunch-of-diagrams-on-it-h3kuhYUCE9A?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash[Unsplash]
+image::/assets/images/20250130-dan-cristian-padure-h3kuhYUCE9A-unsplash.jpg[alt="A blackboard full of diagrams and equations written in chalk."]
+
+{empty} +
+
 Formal methods are fantastic for eliminating errors.
 They are truly amazing if you can work in the way that works best with formal methods.
 You can either write the mathematical proofs first, and generate the code.
@@ -80,6 +86,12 @@ Things like bounded-numbers, strong-typing, semanticfootnote:[Or https://www.two
 Perhaps LLMs can help with this, so I have a bit more hope that formal methods can become easier to use.
 
 == Dependency capability limits
+
+.Photo by link:https://unsplash.com/@wesleyphotography?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash[Wesley Tingey] on link:https://unsplash.com/photos/stack-of-books-on-table-snNHKZ-mGfE?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash[Unsplash]
+image::/assets/images/20250130-wesley-tingey-snNHKZ-mGfE-unsplash.jpg[alt="Stacks and stacks of paperwork."]
+
+{empty} +
+
 Transitive dependencies are a security nightmarefootnote:[Laurence Tratt gives an exquisite analysis of this problem on https://tratt.net/laurie/blog/2024/can_we_retain_the_benefits_of_transitive_dependencies_without_undermining_security.html[his blog]. I definitely took some inspiration from that post here].
 Between the xz supply chain attack and the pad-left incident, there is much to fear when it comes to the security of your software supply chain.
 However, the absolutely huge performance bonus you get from using well-managed and well-optimized libraries are too important to leave behind.
