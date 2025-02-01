@@ -25,6 +25,9 @@ keep_files:
 feed:
   title: Holland Gibson's blog
   url: https://blog.hollandgibson.com
+collections:
+  family:
+    output: true
 asciidoc: {}
 asciidoctor:
   base_dir: :docdir
